@@ -6,7 +6,7 @@ import Header from "./../components/Header";
 import Loading from "../components/LoadingError/Loading";
 import Message from "../components/LoadingError/Error";
 
-const Login = (location, history) => {
+const Login = ({location, history}) => {
   window.scrollTo(0, 0);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -22,6 +22,7 @@ const Login = (location, history) => {
       history.push(redirect);
     }
   }, [userInfo, history, redirect]);
+  
   const submitHandler = (e) => {
     e.preventDefault();
     dispatch(login(email, password));
