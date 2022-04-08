@@ -8,7 +8,8 @@ const SaleStatistics = () => {
           <h5 className="card-title">Sale statistics</h5>
           <img
             style={{ width: "100%", height: "350px", objectFit: "contain" }}
-            src="https://www.cloudyml.com/wp-content/uploads/2021/08/statistics.jpg"
+            // src="https://i.pinimg.com/originals/1a/df/51/1adf510bb87f914af33fa97d93a37ca1.gif"
+            src="https://i.pinimg.com/564x/69/ec/55/69ec554988eb4a333cf6114267e9c7d8.jpg"
             alt="sales"
           />
         </article>

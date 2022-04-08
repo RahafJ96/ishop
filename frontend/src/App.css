@@ -190,8 +190,9 @@ textarea:focus {
 
 .border-product {
   padding: 15px;
-  border: 1px solid #f3f3f3;
+  border: 1px solid #e5e5e5;
   border-radius: 5px;
+  background-color: #fef5ff;
 }
 
 .shopBack {
@@ -199,7 +200,6 @@ textarea:focus {
   position: relative;
   overflow: hidden;
   width: 100%;
-  background-color: #f3fbf7;
 }
 
 .shopBack img {
@@ -307,7 +307,9 @@ textarea:focus {
   width: 80%;
   flex-direction: column;
   padding: 40px 0;
-  box-shadow: 0px 0px 27px 0px rgb(243, 243, 243);
+  box-shadow: 0px 0px 27px 0px rgb(204, 204, 204);
+  background-color: #ffffea;
+
 }
 
 .info-image {
@@ -337,7 +339,7 @@ textarea:focus {
 }
 
 .single-image {
-  background-color: #f3fbf7;
+  background-color: #ffffea;
   margin-right: 20px;
   height: 700px;
   display: flex;
@@ -741,7 +743,8 @@ textarea:focus {
 .order-detail h5 {
   margin-bottom: 6px;
 }
-.btn-txt{
+
+.btn-txt {
   background-color: #46244C;
 }
 

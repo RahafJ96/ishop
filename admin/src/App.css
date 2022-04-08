@@ -359,7 +359,7 @@ body.aside-mini .menu-aside .menu-item.has-submenu .menu-link:after {
 }
 
 .menu-aside .menu-item .icon {
-  color: #ccaad1;
+  color: #46244C;
   margin-right: 10px;
   font-size: 18px;
 }
@@ -373,23 +373,22 @@ body.aside-mini .menu-aside .menu-item.has-submenu .menu-link:after {
 }
 
 .alertIcon {
-  background-color: #F6FFA4;
+  background-color: #f5e3ff;
   
 }
 
 .menu-aside .active {
-  background-color: #F6FFA4;
+  background-color: #f5e3ff;
   
 }
 
 .menu-aside .active .text {
-  background-color: #F6FFA4;
   color: #46244C;
 }
 
 .menu-aside .menu-link {
   padding: 10px;
-  color: #ccaad1;
+  color: #46244C;
   font-weight: bold;
   border-radius: 0.3rem;
   position: relative;
@@ -406,9 +405,8 @@ body.aside-mini .menu-aside .menu-item.has-submenu .menu-link:after {
 
 .menu-aside .menu-link:hover {
   transition: 0.2s linear;
-  background-color: #F6FFA4;
-  color: #46244C;
-
+  background-color: #f5e3ff;
+transform: scale(1.05);
 }
 
 .menu-aside .submenu {
@@ -629,7 +627,7 @@ a.itemside:hover .title {
 .card-user .card-header {
   position: relative;
   height: 100px;
-  background-color: #f4ff95 !important;
+  background-color: #efefef !important;
   text-align: center;
 }
 
