@@ -6,6 +6,7 @@ import productRoute from "./Routes/ProductRoutes.js";
 import { errorHandler, notFound } from "./Middleware/Error.js";
 import userRouter from "./Routes/UserRoutes.js";
 
+
 dotenv.config();
 connectDatabase();
 const app = express();
@@ -17,7 +18,7 @@ app.use("/api/users", userRouter);
 
 // ERROR HANDLER
 app.use(notFound);
-app.use(errorHandler);
+app.use(errorHandler);  
 
 // //Load PRODUCT FROM SERVER
 // app.get("/api/products", (req, res) => {
