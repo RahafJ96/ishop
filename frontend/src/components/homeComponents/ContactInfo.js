@@ -28,7 +28,7 @@ const ContactInfo = () => {
               <i className="fas fa-fax"></i>
             </div>
             <h5>Fax</h5>
-            <p>0791443262</p>
+            <p>079 144 3262</p>
           </div>
         </div>
       </div>

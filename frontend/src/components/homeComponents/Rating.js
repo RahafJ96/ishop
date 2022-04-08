@@ -1,4 +1,5 @@
 import React from "react";
+// need to be fixed
 
 const Rating = ({ value, text }) => {
   return (

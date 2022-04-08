@@ -9,6 +9,7 @@ const SaleStatistics = () => {
           <img
             style={{ width: "100%", height: "350px", objectFit: "contain" }}
             src="https://www.cloudyml.com/wp-content/uploads/2021/08/statistics.jpg"
+            alt="sales"
           />
         </article>
       </div>
