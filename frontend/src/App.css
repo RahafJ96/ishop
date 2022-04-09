@@ -492,7 +492,7 @@ textarea:focus {
   height: 100px;
   width: 100%;
   background-size: cover;
-  background-image: url("https://gosuwall.com/asset/img1/dual-m/assassins-creed-valhalla-eivor-aurora-borealis-dual-monitor-thumbnail-m-gosuwall.com-1_59.jpg");
+  background-color: #F6FFA4;
 }
 
 .author-card-profile {
@@ -525,7 +525,7 @@ textarea:focus {
 }
 
 .wizard .nav .active {
-  background-color: #e5fee9;
+  background-color: #f4e5fe;
   color: black;
 }
 

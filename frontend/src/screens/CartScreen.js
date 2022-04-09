@@ -59,7 +59,7 @@ const CartScreen = ({ match, location, history }) => {
             {/* cartiterm */}
             {cartItems.map((item) => (
               <>
-                <div className="cart-iterm row">
+                <div className="cart-iterm row"> 
                   <div
                     onClick={() => removeFromCartHandle(item.product)}
                     className="remove-button d-flex justify-content-center align-items-center"
@@ -112,7 +112,7 @@ const CartScreen = ({ match, location, history }) => {
               {total > 0 && (
                 <>
                   <div className="col-md-6 d-flex justify-content-md-end mt-3 mt-md-0">
-                    <button onClick={checkOutHandler()}>Checkout</button>
+                    <button onClick={checkOutHandler}>Checkout</button>
                   </div>
                 </>
               )}

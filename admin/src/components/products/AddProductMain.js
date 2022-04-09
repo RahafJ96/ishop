@@ -52,7 +52,7 @@ const AddProductMain = () => {
             <Link to="/products" className="btn btn-danger text-white">
               Go to products
             </Link>
-            <h2 className="content-title">Add product</h2>
+            <h2 className="content-title">Add Product</h2>
             <div>
               <button type="submit" className="btn btn-primary">
                 Publish now
@@ -60,15 +60,14 @@ const AddProductMain = () => {
             </div>
           </div>
 
-          <div className="row mb-4">
-            <div className="col-xl-8 col-lg-8">
+          <div className="row">
               <div className="card mb-4 shadow-sm">
                 <div className="card-body">
                   {error && <Message variant="alert-danger">{error}</Message>}
                   {loading && <Loading />}
                   <div className="mb-4">
                     <label htmlFor="product_title" className="form-label">
-                      Product title
+                      Product name
                     </label>
                     <input
                       type="text"
@@ -120,7 +119,7 @@ const AddProductMain = () => {
                     ></textarea>
                   </div>
                   <div className="mb-4">
-                    <label className="form-label">Images</label>
+                    <label className="form-label">Image</label>
                     <input
                       className="form-control"
                       type="text"
@@ -133,7 +132,6 @@ const AddProductMain = () => {
                   </div>
                 </div>
               </div>
-            </div>
           </div>
         </form>
       </section>
