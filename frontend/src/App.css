@@ -737,7 +737,7 @@ textarea:focus {
 
 .order-detail {
   padding: 30px 0;
-  background-color: #e6d5e9;
+  background-color: #f3d4ff;
 }
 
 .order-detail h5 {
@@ -750,7 +750,8 @@ textarea:focus {
 
 .order-box {
   border-radius: 100px;
-  background-color: #F6FFA4;
+  background-color: hsl(275, 100%, 86%);
+  color: #46244C;
   width: 80px;
   height: 80px;
   display: flex;
@@ -791,10 +792,12 @@ textarea:focus {
 }
 
 /* Pagination */
+
 .pagination .page-link {
   padding: 10px 30px;
   color: #46244C;
 }
+
 
 .page-item.active .page-link {
   background-color: #46244C;

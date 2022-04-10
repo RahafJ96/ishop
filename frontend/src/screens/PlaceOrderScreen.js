@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Message from "../components/LoadingError/Error";
+import { createOrder } from "../Redux/Actions/OrderActions";
+import { ORDER_CREATE_RESET } from "../Redux/Constants/OrderConstants";
 import Header from "./../components/Header";
-// need to be fixed
 
-const PlaceOrderScreen = () => {
+const PlaceOrderScreen = ({ history }) => {
   window.scrollTo(0, 0);
 
   const dispatch = useDispatch();
@@ -13,8 +14,8 @@ const PlaceOrderScreen = () => {
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
 
-   // Calculate Price
-   const addDecimals = (num) => {
+  // Calculate Price
+  const addDecimals = (num) => {
     return (Math.round(num * 100) / 100).toFixed(2);
   };
   cart.itemsPrice = addDecimals(
@@ -28,8 +29,29 @@ const PlaceOrderScreen = () => {
     Number(cart.taxPrice)
   ).toFixed(2);
 
+  const orderCreate = useSelector((state) => state.orderCreate);
+  const { order, success, error } = orderCreate;
+
+  useEffect(() => {
+    if (success) {
+      history.push(`/order/${order._id}`);
+      dispatch({ type: ORDER_CREATE_RESET });
+    }
+  }, [history, dispatch, success, order]);
+
   const placeOrderHandler = (e) => {
     e.preventDefault();
+    dispatch(
+      createOrder({
+        orderItems: cart.cartItems,
+        shippingAddress: cart.shippingAddress,
+        paymentMethod: cart.paymentMethod,
+        itemsPrice: cart.itemsPrice,
+        shippingPrice: cart.shippingPrice,
+        taxPrice: cart.taxPrice,
+        totalPrice: cart.totalPrice,
+      })
+    );
   };
 
   return (
@@ -133,8 +155,7 @@ const PlaceOrderScreen = () => {
                 </tr>
                 <tr>
                   <td>
-                  <strong>Shipping</strong>
-
+                    <strong>Shipping</strong>
                   </td>
                   <td>${cart.shippingPrice}</td>
                 </tr>
@@ -157,7 +178,11 @@ const PlaceOrderScreen = () => {
                 PLACE ORDER
               </button>
             )}
-            
+            {error && (
+              <div className="my-3 col-12">
+                <Message variant="alert-danger">{error}</Message>
+              </div>
+            )}
           </div>
         </div>
       </div>
