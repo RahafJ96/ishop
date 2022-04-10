@@ -2,20 +2,26 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Header from "./../components/Header";
 import { useDispatch, useSelector } from "react-redux";
-import axios from "axios";
+import { toast } from "react-toastify";
 import { getOrderDetails } from "../Redux/Actions/OrderActions";
 import Loading from "../components/LoadingError/Loading";
 import Message from "../components/LoadingError/Error";
-import moment from "moment";
+import Toast from "../components/LoadingError/Toast";
 
 const OrderScreen = ({ match }) => {
   window.scrollTo(0, 0);
+  const ToastObjects = {
+    pauseOnFocusLoss: false,
+    draggable: false,
+    pauseOnHover: false,
+    autoClose: 2000,
+  };
 
   const orderId = match.params.id;
   const dispatch = useDispatch();
 
   const orderDetails = useSelector((state) => state.orderDetails);
-  const { order, loading, error } = orderDetails;
+  const { order, loading, error, success } = orderDetails;
 
   if (!loading) {
     const addDecimals = (num) => {
@@ -34,6 +40,7 @@ const OrderScreen = ({ match }) => {
   return (
     <>
       <Header />
+      <Toast />
       <div className="container">
         {loading ? (
           <Loading />
@@ -41,6 +48,11 @@ const OrderScreen = ({ match }) => {
           <Message variant="alert-danger">{error}</Message>
         ) : (
           <>
+            <div>
+              <Message variant="alert-success mt-5 text-center">
+                <strong>Your order has been confirmed </strong>
+              </Message>
+            </div>
             <div className="row  order-detail">
               <div className="col-lg-4 col-sm-4 mb-lg-4 mb-5 mb-sm-0">
                 <div className="row">
@@ -76,19 +88,6 @@ const OrderScreen = ({ match }) => {
                     </h5>
                     <p>Shipping: {order.shippingAddress.country}</p>
                     <p>Pay method: {order.paymentMethod}</p>
-                    {order.isPaid ? (
-                      <div className="bg-info p-2 col-12">
-                        <p className="text-white text-center text-sm-start">
-                          Paid on {moment(order.paidAt).calendar()}
-                        </p>
-                      </div>
-                    ) : (
-                      <div className="bg-danger p-2 col-12">
-                        <p className="text-white text-center text-sm-start">
-                          NOT PAID !
-                        </p>
-                      </div>
-                    )}
                   </div>
                 </div>
               </div>
@@ -109,19 +108,6 @@ const OrderScreen = ({ match }) => {
                       {order.shippingAddress.address},{" "}
                       {order.shippingAddress.postalCode}
                     </p>
-                    {order.isDelivered ? (
-                      <div className="bg-info p-1 col-12">
-                        <p className="text-white text-center text-sm-start">
-                          Delivered on {moment(order.deliverdAt).calendar()}
-                        </p>
-                      </div>
-                    ) : (
-                      <div className="bg-danger p-1 col-12">
-                        <p className="text-white text-center text-sm-start">
-                          Not Delivered
-                        </p>
-                      </div>
-                    )}
                   </div>
                 </div>
               </div>
@@ -188,9 +174,6 @@ const OrderScreen = ({ match }) => {
                     </tr>
                   </tbody>
                 </table>
-                <div className="col-12">
-                  <button >PAY NOW</button>
-                </div>
               </div>
             </div>
           </>

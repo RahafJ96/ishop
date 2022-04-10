@@ -1,7 +1,7 @@
 import React from "react";
 import Sidebar from "./../components/sidebar";
 import Header from "./../components/Header";
-// import OrderMain from "../components/orders/OrderMain";
+import OrderMain from "../components/orders/OrderMain";
 
 const OrderScreen = () => {
   return (
@@ -9,7 +9,7 @@ const OrderScreen = () => {
       <Sidebar />
       <main className="main-wrap">
         <Header />
-        {/* <OrderMain /> */}
+        <OrderMain />
       </main>
     </>
   );
