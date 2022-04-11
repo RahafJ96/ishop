@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Header from "./../components/Header";
 import { useDispatch, useSelector } from "react-redux";
-import { toast } from "react-toastify";
 import { getOrderDetails } from "../Redux/Actions/OrderActions";
 import Loading from "../components/LoadingError/Loading";
 import Message from "../components/LoadingError/Error";
@@ -10,18 +9,13 @@ import Toast from "../components/LoadingError/Toast";
 
 const OrderScreen = ({ match }) => {
   window.scrollTo(0, 0);
-  const ToastObjects = {
-    pauseOnFocusLoss: false,
-    draggable: false,
-    pauseOnHover: false,
-    autoClose: 2000,
-  };
+
 
   const orderId = match.params.id;
   const dispatch = useDispatch();
 
   const orderDetails = useSelector((state) => state.orderDetails);
-  const { order, loading, error, success } = orderDetails;
+  const { order, loading, error } = orderDetails;
 
   if (!loading) {
     const addDecimals = (num) => {
