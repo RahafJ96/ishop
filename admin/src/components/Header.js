@@ -32,7 +32,7 @@ const Header = () => {
   return (
     <header className="main-header navbar">
       <div className="col-search">
-    
+        <h1>Admin Panel</h1>
       </div>
       <div className="col-nav">
         <button
@@ -60,15 +60,12 @@ const Header = () => {
               <Link className="dropdown-item" to="/">
                 My profile
               </Link>
-              <Link className="dropdown-item" to="#">
-                Settings
-              </Link>
               <Link
                 onClick={logoutHandler}
                 className="dropdown-item text-danger"
                 to="#"
               >
-                Exit
+                Logout
               </Link>
             </div>
           </li>
